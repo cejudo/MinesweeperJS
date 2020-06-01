@@ -15,14 +15,20 @@ function setUpBoard() {
         board[minePosition.x][minePosition.y] = -1;
     }
     //Add the clues
-    
+
 }
 
 function getMineXY() {
     return {
-        x: Math.floor(Math.random() * DIMENSION),
-        y: Math.floor(Math.random() * DIMENSION)
+        x: getRandomInt(),
+        y: getRandomInt()
     };
+}
+
+function getRandomInt() {
+    min = Math.ceil(0);
+    max = Math.floor(DIMENSION);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function drawBoard() {
